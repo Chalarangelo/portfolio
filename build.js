@@ -3,10 +3,17 @@ const sass = require('node-sass');
 
 const filesToCopy = ['index.html', 'main.js'];
 const sourceDir = 'src';
+const assetsDir = 'assets';
 const targetDir = 'docs';
 
 filesToCopy.forEach(f => {
   fs.copyFileSync(`./${sourceDir}/${f}`, `./${targetDir}/${f}`);
+});
+
+fs.readdir(`./${sourceDir}/${assetsDir}`, (err, files) => {
+  files.forEach(f => {
+    fs.copyFileSync(`./${sourceDir}/${assetsDir}/${f}`, `./${targetDir}/${assetsDir}/${f}`);
+  });
 });
 
 sass.render(
