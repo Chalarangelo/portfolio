@@ -1,5 +1,6 @@
 // Import font, set defaults
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300");
+// palette url: http://paletton.com/#uid=73e0w0kw0LvjNPepHMYK7zNJhps
 
 html {
   font-size: 16px;
@@ -178,7 +179,6 @@ header {
       background: #000;
     }
     .screen-bg {
-      //background: #00d1b2;
       background: linear-gradient(210deg, #00d1b2 0%, #008182 100%);
       display: block;
       height: 100%;
@@ -319,27 +319,88 @@ header {
 }
 
 // Navigation menu
-nav {
-    // Under 560px, do the hamburger
-    position: fixed;
-    top: -8rem;
-    left: 0;
+.nav-icon {
+  width: 36px;
+  height: 36px;
+  position: fixed;
+  margin: 32px 24px;
+  bottom: 0;
+  right: 0;
+  transform: rotate(0deg);
+  transform: scale(1.25);
+  transition: .5s ease-in-out;
+  background: #1556d6;
+  border-radius: 100%;
+  cursor: pointer;
+  z-index: 100;
+  span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 22px;
     background: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    transition: all 0.8s ease;
-    &.shown {
-      top: 0;
-    }
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-      li {
+    border-radius: 2px;
+    opacity: 1;
+    left: 7px;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  span:nth-child(1) {
+    top: 10px;
+  }
+  span:nth-child(4) {
+    top: 24px;
+  }
+  span:nth-child(2), span:nth-child(3) {
+    top: 17px;
+  }
+  &.open span:nth-child(1) {
+    top: 17px;
+    width: 0%;
+    left: 50%;
+  }
+  &.open span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  &.open span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  &.open span:nth-child(4) {
+    top: 16px;
+    width: 0%;
+    left: 50%;
+  }
+  @media screen and (min-width: 560px) {
+    display: none;
+  }
+}
+
+nav {
+  display: block;
+  position: fixed;
+  height: auto;
+  width: 100vw;
+  top: -100vh;
+  background: #fff;
+  left: 0;
+  z-index: 90;
+  transition: top 0.8s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  &.shown {
+    top: 0;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    li {
         display: inline-block;
         transition: all 0.5s ease;
         flex: 1 1 auto;
@@ -359,8 +420,13 @@ nav {
           color: inherit;
         }
       }
+  }
+  @media screen and (min-width: 560px) {
+    ul {
+      flex-direction: row;
     }
   }
+}
 
 // Content sections
 

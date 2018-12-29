@@ -1,4 +1,14 @@
-document.addEventListener("scroll", function (e) {
+let lastWindowWidth = document.documentElement.clientWidth;
+const scrollAndResizeHandler = (e) => {
+  if ((lastWindowWidth >= 560 && document.documentElement.clientWidth < 560)
+    || (lastWindowWidth < 560 && document.documentElement.clientWidth >= 560)) {
+    document.getElementsByClassName('nav-icon')[0].classList.remove('open');
+    document.getElementById('navbar').classList.remove('shown');
+  }
+  if (document.documentElement.clientWidth < 560) {
+    document.querySelectorAll('nav ul li').forEach(e => (e.classList.remove('selected')));
+    return;
+  }
   if (document.body.scrollTop > window.innerHeight * 0.95 || document.documentElement.scrollTop > window.innerHeight * 0.95) {
     document.getElementById('navbar').classList.add('shown');
   }
@@ -6,7 +16,8 @@ document.addEventListener("scroll", function (e) {
     document.getElementById('navbar').classList.remove('shown');
   }
   setSelectedNavLink();
-});
+  lastWindowWidth = document.documentElement.clientWidth;
+}
 
 const setSelectedNavLink = () => {
   let counts =
@@ -36,3 +47,19 @@ const elementIsVisibleInViewport = (el) => {
   return ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
     ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth));
 };
+
+document.addEventListener('scroll', scrollAndResizeHandler);
+window.addEventListener('resize', scrollAndResizeHandler);
+
+document.getElementsByClassName('nav-icon')[0].addEventListener('click', e => {
+  document.getElementsByClassName('nav-icon')[0].classList.toggle('open');
+  document.getElementById('navbar').classList.toggle('shown');
+});
+
+document.querySelectorAll('nav ul li').forEach(el => 
+  el.addEventListener('click', function(e){
+  if(document.documentElement.clientWidth < 560) {
+    document.getElementsByClassName('nav-icon')[0].classList.remove('open');
+    document.getElementById('navbar').classList.remove('shown');
+  }
+}));
