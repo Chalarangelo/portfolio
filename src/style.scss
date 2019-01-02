@@ -466,40 +466,6 @@ section, footer {
   }
 }
 
-.flex-container {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.flex-media-obj {
-  flex: 0 0 auto;
-  padding: 8px;
-  max-width: 100%;
-  flex-basis: 100%;
-  order: -1;
-  text-align: center;
-  @media screen and (min-width: 1024px) {
-    order: 0;
-    padding: 16px;
-    max-width: 16.66667%;
-    flex-basis: 16.66667%;
-  }
-}
-
-.flex-fill {
-  flex: 0 0 auto;
-  max-width: 100%;
-  flex-grow: 1;
-  flex-basis: 0;
-}
-
-.profile-picture {
-  width: 200px;
-  border-radius: 50%;
-  max-width: 100%;
-  height: auto; 
-}
-
 footer {
   background:linear-gradient(180deg, #f7f7f7 0%, #f0f0f0 100%);
   p {
