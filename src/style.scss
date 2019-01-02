@@ -326,7 +326,7 @@ header {
   margin: 32px 24px;
   bottom: 0;
   right: 0;
-  transform: rotate(0deg);
+  //transform: rotate(0deg);
   transform: scale(1.25);
   transition: .5s ease-in-out;
   background: #1556d6;
@@ -430,5 +430,35 @@ nav {
 }
 
 // Content sections
+h2 {
+  font-size: 3.25rem;
+  letter-spacing: -.1rem;
+  margin-left: -4px;
+  &::after {
+    display: block;
+    content: '';
+    width: 22.5%;
+    max-width: 130px;
+    height: 2px;
+    background: linear-gradient(135deg, #ffa361 0%, #638de0 100%);
+    position: relative;
+    top: 12px;
+    left: 4px;
+  }
+}
+
+section, footer {
+  padding: 14px 8px;
+  @media screen and (min-width: 560px) {
+    padding: 20px 12px;
+  }
+}
+
+footer {
+  background:linear-gradient(180deg, #f7f7f7 0%, #f0f0f0 100%);
+  p {
+    line-height: 1.6;
+  }
+}
 
 // Footer section
