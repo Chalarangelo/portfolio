@@ -20,33 +20,16 @@ const scrollAndResizeHandler = (e) => {
 }
 
 const setSelectedNavLink = () => {
-  let counts =
-    [{
-      name: 'education',
-      count: (0.85 * countOccurrences([...document.querySelectorAll('#education, #education *')].map(elementIsVisibleInViewport), true) / [...document.querySelectorAll('#education, #education *')].length) + 0.15 * document.getElementById(`educationLink`).classList.contains('selected')
-    },
-    {
-      name: 'work',
-      count: (0.85 * countOccurrences([...document.querySelectorAll('#work, #work *')].map(elementIsVisibleInViewport), true) / [...document.querySelectorAll('#work, #work *')].length) + 0.15 * document.getElementById(`workLink`).classList.contains('selected')
-    },
-    {
-      name: 'introduction',
-      count: (0.85 * countOccurrences([...document.querySelectorAll('#introduction, #introduction *')].map(elementIsVisibleInViewport), true) / [...document.querySelectorAll('#introduction, #introduction *')].length) + 0.15 * document.getElementById(`introductionLink`).classList.contains('selected')
-    }
-    ];
-  counts.sort((a, b) => b.count - a.count);
+  let sections = ['community', 'writing', 'projects', 'education', 'work', 'introduction'];
+  let sectionScrolls = sections.map(v => ({
+    name: v,
+    visible: document.getElementById(v).offsetTop <= (document.documentElement.scrollTop + 0.333 * document.documentElement.clientHeight)
+  }));
+  sectionScrolls.sort((a, b) => b.visible - a.visible);
+  console.log(JSON.stringify(sectionScrolls));
   document.querySelectorAll('nav ul li').forEach(e => (e.classList.remove('selected')));
-  document.getElementById(`${counts[0].name}Link`).classList.add('selected');
+  document.getElementById(`${sectionScrolls[0].name}Link`).classList.add('selected');
 }
-
-const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
-
-const elementIsVisibleInViewport = (el) => {
-  const { top, left, bottom, right } = el.getBoundingClientRect();
-  const { innerHeight, innerWidth } = window;
-  return ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
-    ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth));
-};
 
 document.addEventListener('scroll', scrollAndResizeHandler);
 window.addEventListener('resize', scrollAndResizeHandler);
