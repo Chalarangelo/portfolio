@@ -46,3 +46,5 @@ document.querySelectorAll('nav ul li').forEach(el =>
     document.getElementById('navbar').classList.remove('shown');
   }
 }));
+
+document.getElementById('age').innerHTML = (new Date(new Date() - new Date('1993-12-08').getFullYear() - 1970));
