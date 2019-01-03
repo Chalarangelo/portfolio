@@ -447,13 +447,27 @@ h2 {
   }
 }
 
-section p {
+section p, section li {
   line-height: 1.35;
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
   text-align: justify;
 }
+
+a {
+  &:link {
+    color: #1556d6;
+  }
+  &:visited {
+    color: #0943b4;
+  }
+  &, &:link, &:visited {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
 
 strong {
   font-weight: 500;
@@ -500,6 +514,62 @@ section, footer {
   border-radius: 50%;
   max-width: 100%;
   height: auto; 
+}
+
+.flex-media-logo {
+  flex: 0 0 auto;
+  padding: 4px 8px 4px 0;
+  max-width: 64px;
+  flex-basis: 64px;
+  text-align: center;
+  align-self: center;
+  box-sizing: border-box;
+  img {
+    width: 56px;
+    height: auto;
+  }
+}
+
+.flex-title {
+  flex: 0 0 auto;
+  max-width: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
+  @media screen and (min-width: 560px) {
+    padding-left: 0.75vw;
+  }
+  h3 {
+    font-size: 1.25rem;
+    small {
+      font-size: 0.8rem;
+      display: block;
+      + small {
+        font-size: 0.75rem;
+        color: #424242;
+      }
+    }
+  }
+}
+
+.content-left-offset {
+  margin-left: 64px;
+  margin-top: -24px;
+  @media screen and (min-width: 560px) {
+    margin-left: calc(0.75vw + 64px);
+  }
+  p {
+    margin-bottom: 8px;
+  }
+  ul {
+    padding-left: 12px;
+    margin-top: 8px;
+    list-style: none;
+    li:before {
+      content: "-";
+      position: absolute;
+      margin-left: -12px;
+    }
+  }
 }
 
 section {

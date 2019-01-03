@@ -20,7 +20,7 @@ const scrollAndResizeHandler = (e) => {
 }
 
 const setSelectedNavLink = () => {
-  let sections = ['community', 'writing', 'projects', 'education', 'work', 'introduction'];
+  let sections = ['community', 'writing', 'projects', 'education', 'experience', 'introduction'];
   let sectionScrolls = sections.map(v => ({
     name: v,
     visible: document.getElementById(v).offsetTop <= (document.documentElement.scrollTop + 0.333 * document.documentElement.clientHeight)
