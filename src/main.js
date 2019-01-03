@@ -47,4 +47,4 @@ document.querySelectorAll('nav ul li').forEach(el =>
   }
 }));
 
-document.getElementById('age').innerHTML = (new Date(new Date() - new Date('1993-12-08').getFullYear() - 1970));
+document.getElementById('age').innerHTML = (new Date(new Date() - new Date('1993-12-08')).getFullYear() - 1970);
