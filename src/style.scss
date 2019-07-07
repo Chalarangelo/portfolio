@@ -437,6 +437,7 @@ nav {
           height: 100%;
           text-decoration: none;
           color: inherit;
+          display: block;
         }
       }
   }
@@ -506,7 +507,7 @@ section, footer {
 .flex-media-obj {
   flex: 0 0 auto;
   padding: 8px;
-  max-width: 100%;
+  max-width: calc(100% - 16px);
   flex-basis: 100%;
   text-align: center;
   @media screen and (min-width: 560px) {
