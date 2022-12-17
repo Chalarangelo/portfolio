@@ -1,3 +1,11 @@
+<script>
+  import '../app.scss';
+</script>
+
+<div class="container">
+  <slot />
+</div>
+
 <style lang="scss">
   .container {
     display: grid;
@@ -5,7 +13,3 @@
     grid-column-gap: 0.25rem;
   }
 </style>
-
-<div class="container">
-	<slot></slot>
-</div>
