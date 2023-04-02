@@ -5,18 +5,29 @@ export default {
   items: [
     {
       title: '30 seconds of code',
-      subtitle: 'JavaScript, ES6, React, Node.js, HTML',
+      subtitle: 'JavaScript, React, Astro, Node.js, HTML',
       detail: 'Dec 2017 - Present',
       asset: '30-seconds-of-code.png',
       link: 'https://30secondsofcode.org/',
       content: {
-        intro: 'I am the founder and original creator of <strong>30 seconds of code</strong>, a curated collection of over 1000 modern JavaScript, CSS and React snippets, that can be easily copied into any new or existing project. I maintain the platform for the project, as well as create and cureate content for the website. The project has over 250 contributors and 70.000 stars on GitHub, while most of its systems utilize continuous integration tools to streamline the build and update process of the project. It\'s currently one of the most extensive learning resources for ES6 on GitHub. My core responsibilites as a mainter include, but are not limited to:',
+        intro: 'I am the founder and original creator of <strong>30 seconds of code</strong>, a curated collection of over 1000 modern JavaScript, CSS and React snippets, that can be easily copied into any new or existing project. I maintain the platform for the project, as well as create and curate content for the website. The project has over 250 contributors and 100k stars on GitHub, while most of its systems utilize continuous integration tools to streamline the build and update process of the project. It\'s currently one of the most extensive learning resources for ES6 on GitHub. My core responsibilites as a mainter include, but are not limited to:',
         points: [
-          'Development, Indexing, Unit-testing and Maintenance of a JavaScript (ES6) and React Codebase',
+          'Development, Unit-testing and Maintenance of a JavaScript (ES6) Codebase (Astro, Web Components)',
           'Maintenance of Automation Tools and Continuous Integration (Node.js, GitHub Actions)',
-          'Website Administration and Continuous Development (Next.js, Netlify)',
-          'Content Curation and Community Management (Code Reviews, Twitter)'
+          'Website Administration and Continuous Deployment (Netlify)',
+          'Design and Implementation of a modern design system (Figma, CSS, Sass/SCSS)',
+          'Content Creation, Curation and Community Management (GitHub, Code Reviews)'
         ]
+      }
+    },
+    {
+      title: 'jsiqle',
+      subtitle: 'JavaScript, Node.js',
+      detail: 'Oct 2021 - Mar 2022',
+      asset: 'code.svg',
+      link: 'https://github.com/Chalarangelo/jsiqle',
+      content: {
+        intro: 'I am the creator of <strong>jsiqle</strong>, a JavaScript library that allows users to create ActiveModel-like models and collections, as well as to perform queries on them. The library was developed as part of the infrastructure used to power the <a href="https://30secondsofcode.org/" target="_blank" rel="noopener">30 seconds of code</a> website, and was used in production for a while. It is currently in hiatus, but it is still maintained and updated occasionally.'
       }
     },
     {
@@ -27,6 +38,16 @@ export default {
       link: 'https://furl.netlify.app/',
       content: {
         intro: 'I developed <strong>furl</strong>, a library of components written entirely in a functional style, utilizing the hooks API provided by React. The library contains a variety of full-fledged reusable UI components with multiple variants, extensive documentation and examples.'
+      }
+    },
+    {
+      title:' Fixture Factory',
+      subtitle: 'JavaScript, Node.js, TypeScript',
+      detail: 'May 2021 - Jun 2021',
+      asset: 'code.svg',
+      link: 'https://github.com/Chalarangelo/fixture-factory',
+      content: {
+        intro: 'I developed <strong>Fixture Factory</strong>, a FactoryBot-inspired library that allows users to create and generate fixtures for their projects. The library is written in TypeScript and is fully tested, while it is also fully documented and has a comprehensive set of examples.'
       }
     },
     {
@@ -71,6 +92,7 @@ export default {
           'I\'ve tinkered with progressive web apps for a long time, producing a handful of demos, such as <a href="https://chalarangelo.github.io/mock-pwa/" target="_blank">Mock PWA</a>, <a href="https://github.com/Chalarangelo/autumn-pwa" target="_blank">Autumn Blog</a> and <a href="https://github.com/Chalarangelo/pwapp-demo" target="_blank">PWApp Demo</a>.',
           'I have dabbled in WebSockets a little bit, creating <a href="https://github.com/Chalarangelo/cows-js" target="_blank">Cows.js</a>, a simple chat platform powered by React.',
           'I built <a href="" target="_blank">Reactor</a> back in the days before create-react-app was the de facto choice for kickstarting React projects. It\'s a simple set of Bash/Batch scripts for creating a React project without having to set up everything yourself.',
+          'I developed a small utility for React components, named <a href="https://github.com/Chalarangelo/combine-class-names" target="_blank">combine-class-names</a>, which tidies up messy class name values in JSX.',
           'One of my earliest demos is <a href="https://chalarangelo.github.io/starclock-js/" target="_blank">Starclock-js</a>, a beautiful astronomical clock built with JavaScript/jQuery, HTML and CSS.',
           'While exploring HTML5, I put together <a href="https://chalarangelo.github.io/htmltemplategenerator/" target="_blank">HTML5 Template Generator</a>, a replacement tool for commonly-found HTML5 boilerplates.',
           'I\'ve tried my hand at simple interpreters and parsers, producing <a href="https://github.com/Chalarangelo/parse-md-js" target="_blank">Parse-MD.js</a> for Markdown and <a href="https://gist.github.com/Chalarangelo/576773ef989ff9229f2befde57c82043" target="_blank">brainsource.js</a> for brainf**k, both written in JavaScript.',
