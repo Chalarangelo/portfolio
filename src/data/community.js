@@ -9,7 +9,7 @@ export default {
       asset: 'stackoverflow.png',
       link: 'https://stackoverflow.com/users/1650200/angelos-chalaris?tab=profile',
       content: {
-        intro: 'I actively participate in the Q&A site Stack Overflow and I currently have over 5000 reputation points and a bronze tag badge in JavaScript. Most of my questions and answers are in the JavaScript, HTML, jQuery and CSS tags. Some of my top answers include:',
+        intro: 'I actively participate in the Q&A site Stack Overflow and I currently have over 6000 reputation points and a bronze tag badge in JavaScript. Most of my questions and answers are in the JavaScript, HTML, jQuery and CSS tags. Some of my top answers include:',
         points: [
           '<a href="https://stackoverflow.com/a/46478199/1650200" target="_blank">What is the difference between window.customElements.define() and document.registerElement()</a>',
           '<a href="https://stackoverflow.com/a/41846326/1650200" target="_blank">Vertical line with dots in ends and between</a>',
