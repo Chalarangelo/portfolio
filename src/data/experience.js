@@ -4,20 +4,30 @@ export default {
   shortTitle: 'Experience',
   items: [
     {
-      title: 'Full Stack Engineer',
+      title: 'Senior Full Stack Engineer',
       subtitle: 'Skroutz S.A.',
-      detail: 'Jan 2022 - Present',
+      detail: 'Jan 2023 - Present',
       asset: 'skroutz.jpeg',
       content: {
-        intro: 'Software engineering role focused on JavaScript/ReactJS and Ruby/Ruby on Rails; everyday tasks included:',
+        intro: 'Senior software engineering role focused on JavaScript/ReactJS and Ruby/Ruby on Rails; everyday tasks included:',
         points: [
-          'Collaborating with experienced engineers and designers to build new products',
-          'Developing new features and improving existing ones in order to maintain high user experience quality',
-          'Building efficient and reusable full-stack solutions and communicating software development best practices',
-          'Optimizing workflows in order to minimize friction and speed up repetitive tasks',
-          'Creating and adapting a codebase capable of supporting quick prototyping and development cycles',
-          'Participating in usability tests, shipping experiments and studying metrics to identify flaws and enhance feature performance',
+          'Collaboration with experienced engineers, designers and product managers to build new products',
+          'Rapid development of new features, products and systems to deliver value to end users',
+          'Maintenance, refactoring and improvement of existing code to maintain high user experience quality',
+          'Research, analysis and development of reusable full-stack software solutions ',
+          'Implementation of coding best practices, knowledge sharing and mentoring',
+          'Workflow optimization in order to increase velocity and minimize friction in development',
+          'Usability testing, shipping experiments, metric evaluation to identify flaws and enhance feature performance'
         ]
+      }
+    },
+    {
+      title: 'Full Stack Engineer',
+      subtitle: 'Skroutz S.A.',
+      detail: 'Jan 2022 - Dec 2022',
+      asset: 'skroutz.jpeg',
+      content: {
+        intro: 'Software engineering role focused on JavaScript/ReactJS and Ruby/Ruby on Rails. An example of my everyday work and how I contributed to the team can be found in <a href="https://engineering.skroutz.gr/blog/handling-inertial-scroll-in-combination-with-scroll-snapping/" target="_blank" rel="noopener noreferrer">this blog post</a>.'
       }
     },
     {
@@ -26,15 +36,7 @@ export default {
       detail: 'Sep 2019 - Dec 2021',
       asset: 'skroutz.jpeg',
       content: {
-        intro: 'Software engineering role focused on JavaScript and ReactJS; everyday tasks included:',
-        points: [
-          'Collaborating with experienced engineers and designers to build new products',
-          'Improving existing features in order to maintain high user experience quality',
-          'Building efficient and reusable front-end systems and communicating front-end best practices',
-          'Optimizing workflows in order to minimize friction and speed up repetitive tasks',
-          'Creating and adapting a codebase capable of supporting quick prototyping and development cycles',
-          'Participating in usability tests, shipping experiments and studying metrics to identify flaws and enhance feature performance',
-        ]
+        intro: 'Software engineering role focused on JavaScript and ReactJS.'
       }
     },
     {
