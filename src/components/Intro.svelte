@@ -128,4 +128,4 @@
 
 <p>I'm Angelos Chalaris, {new Date(new Date() - new Date('1993-12-08')).getFullYear() - 1970} years old, a web developer from <strong>Athens, Greece.</strong> Programming is not just a career path for me, but also a hobby and a passion of mine. I have a BSc in Computer Science and a MSc in Advanced Information Systems I started coding sometime around 2011, which is when I started studying <strong>Computer Science</strong> in the University of Piraeus. After getting my BSc, I studied for a MSc in Advanced Information Systems with a concentration in <strong>Advanced Software Development Technologies</strong>. I've worked with various technologies in the past, but recently I've taken an interest in web development and web applications.</p>
 
-<p><strong>Skills:</strong> HTML, CSS, JavaScript, Node.js, Sass/SCSS, React, jQuery, MySQL/MariaDB, Git</p>
+<p><strong>Skills:</strong> HTML, CSS/SCSS, JavaScript, Node.js, React, Web Components, Ruby on Rails, MySQL/MariaDB, Git, Figma</p>
