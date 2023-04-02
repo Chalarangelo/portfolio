@@ -39,6 +39,15 @@ export default {
       }
     },
     {
+      title: 'The Fundamentals of Digital Marketing',
+      subtitle: 'Google Digital Workshop',
+      detail: '2022 - 2022',
+      asset: 'google.png',
+      content: {
+        intro: 'I have completed Google\'s <a href="https://learndigital.withgoogle.com/digitalgarage/course/digital-marketing" target="_blank">Fundamentals of Digital Marketing</a> course, learning the basics of digital marketing. More specifically, I was introduced to concepts such as digital marketing strategy, search engine optimization, display advertising, social media marketing, email marketing, mobile marketing and analytics. You can find my certificate <a href="./assets/digital-marketing.pdf" target="_blank">here</a>.'
+      }
+    },
+    {
       title: 'Tech Talent School Certifications',
       subtitle: 'Found.ation',
       detail: '2017 - 2018',
