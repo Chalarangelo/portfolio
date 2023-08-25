@@ -27,15 +27,6 @@ export default {
       content: {
         intro: 'I actively participate in the coding challenge website Codewars and I currently have over 2500 honour points (3kyu). Most of my Kata solutions are written in JavaScript and Node.js.'
       }
-    },
-    {
-      title: 'Other Communities',
-      subtitle: 'Jun 2015 - Present',
-      asset: 'activity.svg',
-      content: {
-        intro: 'I have actively participated in <a href="https://www.spoj.com/users/chalarangelo/" target="_blank">Sphere Online Judgle (SPOJ)</a> in the past, ranking among the top 5000 users, as well as <a href="https://www.codingame.com/profile/f5b242600765714eb29e2487c9822ade6829922" target="_blank">CodinGame</a>, reaching level 10.'
-      }
     }
-
   ]
 };
