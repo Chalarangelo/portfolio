@@ -105,10 +105,6 @@
       <path d="M324.907 344.893l-200.994-18.559-3.997 42.828 201.281 18.555zM320.055 399.996l-201.853.287v43.106l201.853-.278zM363.734 239.255L189.865 136.471l-21.982 37.115L341.751 276.37zM338.329 288.361l-195.002-52.249-11.136 41.686 195.002 52.249z" />
       <path d="M354.594 477.651H89.649V301.212H55.104V511.34h.287l9.995.287h323.187v-.287l.287-9.993V301.212h-34.266zM421.98 0l-42.544 7.423 34.553 198.998 42.534-7.422zM256.958 66.522L370.873 233.26l35.409-24.267L292.643 41.971z" />
     </svg></a>
-    <a href="https://twitter.com/chalarangelo" target="_blank" class="social-icon" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-    </svg></a>
     <a href="https://codepen.io/chalarangelo" target="_blank" class="social-icon" title="Codepen"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
@@ -116,10 +112,6 @@
       <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
       <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
       <line x1="12" y1="2" x2="12" y2="8.5"></line>
-    </svg></a>
-    <a href="https://medium.com/@chalarangelo" target="_blank" class="social-icon" title="Medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" fill="currentColor" stroke="currentColor"
-      stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M511.981 118.509c-.135-2.956-1.892-5.726-4.565-7.04l-159.24-79.62a8.295 8.295 0 0 0-10.664 2.898L229.916 200.282l-55.413-85.891a8.382 8.382 0 0 0-3.259-2.922l-159.24-79.62C6.582 29.138 0 33.218 0 39.268v79.621a8.293 8.293 0 0 0 8.294 8.294 8.293 8.293 0 0 0 8.294-8.294V52.687l142.652 71.326v335.32L16.587 388.008V154.277a8.293 8.293 0 0 0-8.294-8.294 8.293 8.293 0 0 0-8.294 8.294v238.857a8.293 8.293 0 0 0 4.585 7.418l159.24 79.62c5.427 2.714 12.003-1.375 12.003-7.418V318.087l324.17 162.085c5.427 2.714 12.003-1.375 12.003-7.418V118.888c0-.128-.013-.252-.019-.379zM175.827 299.541v-152.5l145.239 225.12-145.239-72.62zm319.586 159.794l-139.34-69.671 108.576-186.993a8.295 8.295 0 0 0-3.009-11.337 8.296 8.296 0 0 0-11.337 3.009L344.094 377.258 239.77 215.555 347.383 49.998 492.1 122.357l-26.387 45.446a8.295 8.295 0 0 0 3.009 11.337 8.297 8.297 0 0 0 11.337-3.009l15.354-26.443v309.647z" />
     </svg></a>
   </div>
 </div>
