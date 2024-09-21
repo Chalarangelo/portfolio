@@ -39,6 +39,15 @@ export default {
       }
     },
     {
+      title: 'CSS for JavaScript Developers',
+      subtitle: 'Josh W. Comeau',
+      detail: '2023-2023',
+      asset: 'comeau-courses.png',
+      content: {
+        intro: 'I have completed Josh W. Comeau\'s <a href="https://css-for-js.dev/" target="_blank">CSS for JavaScript Developers</a> course, refreshing and further expanding my knowledge of CSS. The course covers various CSS topics, such as fundamentals, rendering logic, modern component architecture, flexbox, grid, responsive & behavioral CSS, typography, animations and much more. You can find my certificate <a href="./assets/CSS-for-JS-devs.pdf" target="_blank">here</a>.'
+      }
+    },
+    {
       title: 'The Fundamentals of Digital Marketing',
       subtitle: 'Google Digital Workshop',
       detail: '2022 - 2022',
