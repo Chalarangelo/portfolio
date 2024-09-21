@@ -42,7 +42,7 @@ export default {
       title: 'Advanced Ruby: Behind the Magic',
       subtitle: 'Go Rails',
       detail: '2024-2024',
-      asset: 'go-rails.png',
+      asset: 'gorails.png',
       content: {
         intro: 'I have completed the <a href="https://courses.gorails.com/advanced-ruby-for-rails-devs" target="_blank">Advanced Ruby: Behind the Magic</a> course by Go Rails, covering advanced Ruby topics, such as blocks, procs & lambdas, requiring files & autoloaders, metaprogramming and domain-specific languages (DSLs). You can find my certificate <a href="./assets/Advanced-Ruby-Behind-the-Magic.pdf" target="_blank">here</a>.'
       }
