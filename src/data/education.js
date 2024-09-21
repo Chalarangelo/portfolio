@@ -41,7 +41,7 @@ export default {
     {
       title: 'Advanced Ruby: Behind the Magic',
       subtitle: 'Go Rails',
-      detail: '2024-2024',
+      detail: '2024 - 2024',
       asset: 'gorails.png',
       content: {
         intro: 'I have completed the <a href="https://courses.gorails.com/advanced-ruby-for-rails-devs" target="_blank">Advanced Ruby: Behind the Magic</a> course by Go Rails, covering advanced Ruby topics, such as blocks, procs & lambdas, requiring files & autoloaders, metaprogramming and domain-specific languages (DSLs). You can find my certificate <a href="./assets/Advanced-Ruby-Behind-the-Magic.pdf" target="_blank">here</a>.'
@@ -50,7 +50,7 @@ export default {
     {
       title: 'CSS for JavaScript Developers',
       subtitle: 'Josh W. Comeau',
-      detail: '2023-2023',
+      detail: '2023 - 2023',
       asset: 'comeau-courses.png',
       content: {
         intro: 'I have completed Josh W. Comeau\'s <a href="https://css-for-js.dev/" target="_blank">CSS for JavaScript Developers</a> course, refreshing and further expanding my knowledge of CSS. The course covers various CSS topics, such as fundamentals, rendering logic, modern component architecture, flexbox, grid, responsive & behavioral CSS, typography, animations and much more. You can find my certificate <a href="./assets/CSS-for-JS-devs.pdf" target="_blank">here</a>.'
