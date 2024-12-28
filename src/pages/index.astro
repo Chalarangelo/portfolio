@@ -1,0 +1,26 @@
+---
+import '../styles/index.scss';
+import Section from '../components/Section.astro';
+import Intro from '../components/Intro.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
+
+import { sections, sectionIds } from '../data';
+---
+
+<Layout>
+  <Header
+    sections={sectionIds.map(id => [id, sections[id].shortTitle])}
+  />
+	<main>
+    {sectionIds.map((sectionId) =>
+      sectionId === 'introduction' ?
+        (<Section section={sections[sectionId]} key={sectionId}>
+          <Intro />
+         </Section>) :
+        (<Section section={sections[sectionId]} key={sectionId} />)
+    )}
+  </main>
+  <Footer />
+</Layout>

@@ -1,5 +1,5 @@
 /* Import font, set defaults */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300');
 /* palette url: http://paletton.com/#uid=73e0w0kw0LvjNPepHMYK7zNJhps */
 
 html {
@@ -51,4 +51,10 @@ section li {
   word-wrap: break-word;
   hyphens: auto;
   text-align: justify;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 0.25rem;
 }

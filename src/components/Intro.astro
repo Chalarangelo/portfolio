@@ -1,77 +1,6 @@
-<style lang="scss">
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 8px;
-    margin-top: 16px;
-
-    small {
-      display: block;
-      font-size: 1.25rem;
-      color: #424242;
-    }
-  }
-
-  h2 {
-    font-size: 3.25rem;
-    letter-spacing: -.1rem;
-    margin-left: -4px;
-
-    &::after {
-      display: block;
-      content: '';
-      width: 22.5%;
-      max-width: 130px;
-      height: 2px;
-      background: linear-gradient(135deg, #ffa361 0%, #638de0 100%);
-      position: relative;
-      top: 12px;
-      left: 4px;
-    }
-  }
-
-  .flex-container {
-    display: flex;
-    flex-flow: row wrap;
-  }
-
-  .flex-media-obj {
-    flex: 0 0 auto;
-    padding: 8px;
-    max-width: calc(100% - 16px);
-    flex-basis: 100%;
-    text-align: center;
-
-    @media screen and (min-width: 560px) {
-      max-width: 136px;
-      flex-basis: 120px;
-    }
-  }
-
-  .flex-fill {
-    flex: 0 0 auto;
-    max-width: 100%;
-    flex-grow: 1;
-    flex-basis: 0;
-    text-align: center;
-
-    @media screen and (min-width: 560px) {
-      text-align: left;
-      padding-left: 1.25vw;
-    }
-
-    a:not(:first-of-type) {
-      padding-left: 4px;
-    }
-  }
-
-  .profile-picture {
-    width: 120px;
-    border-radius: 50%;
-    max-width: 100%;
-    height: auto;
-  }
-</style>
-
+---
+const age = new Date(new Date() - new Date('1993-12-08')).getFullYear() - 1970;
+---
 
 <div class="flex-container">
   <div class="flex-media-obj">
@@ -118,6 +47,6 @@
 
 <h2>Introduction</h2>
 
-<p>I'm Angelos Chalaris, {new Date(new Date() - new Date('1993-12-08')).getFullYear() - 1970} years old, a web developer from <strong>Athens, Greece.</strong> Programming is not just a career path for me, but also a hobby and a passion of mine. I have a BSc in Computer Science and a MSc in Advanced Information Systems I started coding sometime around 2011, which is when I started studying <strong>Computer Science</strong> in the University of Piraeus. After getting my BSc, I studied for a MSc in Advanced Information Systems with a concentration in <strong>Advanced Software Development Technologies</strong>. I've worked with various technologies in the past, but recently I've taken an interest in web development and web applications.</p>
+<p>I'm Angelos Chalaris, {age} years old, a web developer from <strong>Athens, Greece.</strong> Programming is not just a career path for me, but also a hobby and a passion of mine. I have a BSc in Computer Science and a MSc in Advanced Information Systems I started coding sometime around 2011, which is when I started studying <strong>Computer Science</strong> in the University of Piraeus. After getting my BSc, I studied for a MSc in Advanced Information Systems with a concentration in <strong>Advanced Software Development Technologies</strong>. I've worked with various technologies in the past, but recently I've taken an interest in web development and web applications.</p>
 
 <p><strong>Skills:</strong> HTML, CSS/SCSS, JavaScript, Node.js, React, Web Components, Ruby on Rails, MySQL/MariaDB, Git, Figma</p>
