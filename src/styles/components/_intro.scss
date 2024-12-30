@@ -1,71 +1,115 @@
-h1 {
-  font-size: 3rem;
-  margin-bottom: 8px;
-  margin-top: 16px;
+main > section:first-child {
+  // Add some additional spacing below the section.
+  padding-block-end: var(--layout-row-spacing);
 
-  small {
-    display: block;
-    font-size: 1.25rem;
-    color: #424242;
+  > div {
+    // Make the introduction section a flex container.
+    display: flex;
+    flex-wrap: wrap;
+    // Add spacing between image and text.
+    column-gap: var(--spacing-12);
+
+    // Adjust the layout based on user font size choice.
+    @media (max-width: 30rem) {
+      // If the viewport isn't wide enough, center the content.
+      justify-content: center;
+      // Add spacing between image and text.
+      row-gap: var(--spacing-8);
+    }
+
+    > div {
+      // Make the text container a flex container.
+      display: flex;
+      flex-direction: column;
+      // Add spacing between children.
+      gap: var(--spacing-8);
+
+      > div {
+        // Make the social links a flex container.
+        display: flex;
+        // Add spacing between social links.
+        gap: var(--spacing-6);
+
+        // Adjust the layout based on user font size choice.
+        @media (max-width: 30rem) {
+          // If the viewport isn't wide enough, center the content.
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  img {
+    // Set the size of the profile picture.
+    width: 120px;
+    height: 120px;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--border-radius-medium);
+  }
+
+  h1 {
+    > small {
+      // Set up the icon next to the text.
+      display: flex;
+      align-items: center;
+      // Add spacing between the icon and the text.
+      gap: var(--spacing-2);
+      // Add a small text below the heading.
+      font-size: var(--font-sm);
+      color: var(--color-text-lighter);
+      font-weight: var(--font-weight-medium);
+      // Add spacing between the heading and the small text.
+      margin-block-start: var(--spacing-4);
+
+      // Adjust the layout based on user font size choice.
+      @media (max-width: 30rem) {
+        // If the viewport isn't wide enough, center the content.
+        justify-content: center;
+      }
+    }
+  }
+
+  a {
+    // Remove underline from social links.
+    --link_color-underline: transparent;
+    // Apply a transition on hover.
+    transition: color var(--animation-duration-medium) ease;
+
+    @media (hover: hover) {
+      &:is(:hover, :focus) {
+        // Only apply hover styles on devices that support hover.
+        color: var(--color-primary);
+      }
+    }
   }
 }
 
-h2 {
-  font-size: 3.25rem;
-  letter-spacing: -0.1rem;
-  margin-left: -4px;
+// Wave effect 👋
+.wave {
+  // Change cursor and display as `inline-block` to allow for a transform.
+  cursor: default;
+  display: inline-block;
+  // Set the correct `transform-origin` for the wave animation.
+  transform-origin: 75% 80%;
 
-  &::after {
-    display: block;
-    content: '';
-    width: 22.5%;
-    max-width: 130px;
-    height: 2px;
-    background: linear-gradient(135deg, #ffa361 0%, #638de0 100%);
-    position: relative;
-    top: 12px;
-    left: 4px;
+  // Performance optimization - hint to use the GPU.
+  will-change: transform;
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    // Only apply the wave animation on devices that support hover and
+    // for users that have not requested reduced motion.
+    &:is(:hover, :focus) {
+      animation: wave var(--animation-duration-long) infinite alternate ease-in-out;
+    }
   }
 }
 
-.flex-container {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.flex-media-obj {
-  flex: 0 0 auto;
-  padding: 8px;
-  max-width: calc(100% - 16px);
-  flex-basis: 100%;
-  text-align: center;
-
-  @media screen and (min-width: 560px) {
-    max-width: 136px;
-    flex-basis: 120px;
+// Set up the wave animation for the footer's wave emoji.
+@keyframes wave {
+  from {
+    transform: rotate(-5deg);
   }
-}
-
-.flex-fill {
-  flex: 0 0 auto;
-  max-width: 100%;
-  flex-grow: 1;
-  flex-basis: 0;
-  text-align: center;
-
-  @media screen and (min-width: 560px) {
-    text-align: left;
-    padding-left: 1.25vw;
+  to {
+    transform: rotate(15deg);
   }
-
-  a:not(:first-of-type) {
-    padding-left: 4px;
-  }
-}
-
-.profile-picture {
-  width: 120px;
-  border-radius: 50%;
-  max-width: 100%;
-  height: auto;
 }

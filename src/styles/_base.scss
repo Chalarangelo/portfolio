@@ -1,60 +1,64 @@
-/* Import font, set defaults */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300');
-/* palette url: http://paletton.com/#uid=73e0w0kw0LvjNPepHMYK7zNJhps */
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-  color: #000;
+*,
+*::before,
+*::after {
+  // Prevent padding and border from affecting element width.
+  box-sizing: border-box;
+  // Minimize friction when adding borders to elements.
+  border-width: 0;
+  border-style: solid;
 }
 
-body {
+* {
+  // Remove default margins.
   margin: 0;
-  overflow-x: hidden;
 }
 
 html,
-* {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  line-height: 1.2;
+body {
+  // Allow percentage-based heights.
+  height: 100%;
+}
+
+html {
+  // Prevent font size inflation on mobile.
   -webkit-text-size-adjust: 100%;
+  // Add smooth scrolling.
+  scroll-behavior: smooth;
 }
 
-* {
-  font-size: 1rem;
-  font-weight: 300;
+body {
+  // Remove margin in all browsers.
+  margin: 0;
+  // Apply the website's background.
+  background: var(--color-background);
+  // Apply the website's text color.
+  color: var(--color-text);
+  // Improve text rendering.
+  -webkit-font-smoothing: antialiased;
 }
 
-a:link {
-  color: #1556d6;
+[hidden] {
+  // Make elements with the HTML hidden attribute stay hidden by default.
+  display: none;
 }
 
-a:visited {
-  color: #0943b4;
+:focus-visible {
+  // Customize the focus ring for keyboard users, on browsers that support it.
+  outline-color: var(--color-primary);
 }
 
-a,
-a:link,
-a:visited {
-  cursor: pointer;
-  text-decoration: none;
+::selection {
+  // Apply a background and color for user selection. This not only applies the
+  // colors, but also resets any special color that may be applied (e.g code
+  // highlighting inside code blocks).
+  background-color: var(--color-selection-background);
+  color: var(--color-text);
 }
 
-strong {
-  font-weight: 500;
-}
-
-section p,
-section li {
-  line-height: 1.35;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
-  text-align: justify;
-}
-
-main {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 0.25rem;
+::backdrop {
+  // There seems to be a bug where the color is not always applied
+  // unless defined inside the `::backdrop` pseudo-element itself.
+  --color-dialog-backdrop: hsla(0, 0%, 0%, 0.6);
+  // Apply the correct backdrop color for modal `dialog` elements.
+  background: var(--color-dialog-backdrop);
 }

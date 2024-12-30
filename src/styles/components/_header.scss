@@ -1,142 +1,150 @@
-nav {
-  display: block;
-  position: sticky;
-  background: #fff;
-  width: 100%;
-  transition: top 0.8s ease;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  z-index: 90;
-  top: -100vh;
-  grid-column: span 12;
-
-  &.open {
-    top: 0;
-  }
-
-  @media screen and (min-width: 560px) {
-    top: 0;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    li {
-      display: inline-block;
-      transition: all 0.5s ease;
-      flex: 1 1 auto;
-      padding: 0.75rem 0.5rem;
-      &:hover,
-      &:focus {
-        background: #3c71da;
-        color: #fff;
-      }
-
-      @media screen and (min-width: 560px) {
-        &.selected {
-          border-bottom: 3px solid #3c71da;
-        }
-      }
-
-      a,
-      a:link,
-      a:visited,
-      a:active,
-      a:hover {
-        letter-spacing: 1px;
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
-        color: inherit;
-        display: block;
-      }
-    }
-  }
-
-  @media screen and (min-width: 560px) {
-    ul {
-      flex-direction: row;
-    }
-  }
-}
-
-.nav-icon {
-  width: 36px;
-  height: 36px;
-  position: fixed;
-  margin: 32px 24px;
-  bottom: 0;
-  right: 0;
-  transform: scale(1.25);
-  transition: 0.5s ease-in-out;
-  background: #1556d6;
-  border-radius: 100%;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
-    0 1px 5px 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  z-index: 100;
-
-  span {
-    display: block;
-    position: absolute;
-    height: 2px;
-    width: 22px;
-    background: #fff;
-    border-radius: 2px;
-    opacity: 1;
-    left: 7px;
-    transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
-  }
-
-  span:nth-child(1) {
-    top: 10px;
-  }
-
-  span:nth-child(4) {
-    top: 24px;
-  }
-
-  span:nth-child(2),
-  span:nth-child(3) {
-    top: 17px;
-  }
-
-  &.open span:nth-child(1) {
-    top: 17px;
-    width: 0%;
-    left: 50%;
-  }
-
-  &.open span:nth-child(2) {
-    transform: rotate(45deg);
-  }
-
-  &.open span:nth-child(3) {
-    transform: rotate(-45deg);
-  }
-
-  &.open span:nth-child(4) {
-    top: 16px;
-    width: 0%;
-    left: 50%;
-  }
-
-  @media screen and (min-width: 560px) {
-    display: none;
-  }
-}
-
 header {
+  // Make the header size responsive, so that it can be adjusted based on the
+  // user's font size choice.
+  --header-height: 60dvh;
+  --header-blur-height: 10dvh;
+
+  // On smaller viewports, adjust the header size.
+  @media screen and (min-width: 23rem) and (max-width: 25rem) {
+    --header-height: 62.5dvh;
+  }
+
+  // Adjust the layout based on user font size choice.
+  @media screen and (max-height: 32rem) {
+    // On small viewports (landscape), display much like a business card.
+    --header-height: 54vh;
+    --header-blur-height: 8dvh;
+  }
+
+  // Create the responsive header layout.
   max-width: 100%;
-  height: 100vh;
+  height: var(--header-height);
   overflow-x: hidden;
   display: flex;
   justify-content: center;
-  grid-column: span 12;
+  // Place the header in the correct grid area.
+  grid-area: header;
+
+  > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--header-height);
+    width: 100%;
+    object-fit: cover;
+    filter: blur(0.5px) grayscale(12%) brightness(62.5%);
+
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      // Apply this effect only when hover is supported and the user has not
+      // requested reduced motion. It's just for show, so it's not important.
+      // The duration etc. here are entirely custom to this effect.
+      transition: filter 1.5s ease;
+      transition-delay: 1.5s;
+
+      &:hover {
+        // Add a little easter egg to the images.
+        filter: blur(0px) grayscale(12%) brightness(75%) saturate(200%);
+      }
+    }
+
+    // Create the blur effect on the header image.
+    + div {
+      display: block;
+      position: absolute;
+      // Place at the end of the header image, offset as needed (the 2px are
+      // added to account for blur and other effects).
+      top: calc(var(--header-height) - var(--header-blur-height) + 2px);
+      left: 0;
+      height: var(--header-blur-height);
+      width: 100%;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        // Create the actual blur effect.
+        height: var(--header-blur-height);
+        width: 100%;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          33%,
+          var(--color-background),
+          66%,
+          var(--color-background)
+        );
+      }
+    }
+  }
+
+  > div:last-child {
+    // Place the title on top of the header image.
+    z-index: 5;
+    // Center content vertically and horizontally.
+    align-self: center;
+    text-align: center;
+
+    h1 {
+      font-size: var(--font-x2);
+      // Add a shadow to the text to separate it from the background.
+      text-shadow: 1px 2px 6px #212121;
+      line-height: var(--line-height-tight); //0.8;
+      // Make the text more pronounced.
+      color: var(--color-text-darker);
+
+      // Adjust the font size based on user font size choice.
+      @media screen and (min-width: 30rem) {
+        font-size: var(--font-x3);
+      }
+
+      // Adjust the font size based on user font size choice.
+      @media screen and (min-width: 32rem) {
+        font-size: var(--font-x4);
+      }
+
+      small {
+        // Display the small text below the heading.
+        display: block;
+        // Add spacing between the heading and the small text.
+        margin-block-start: var(--spacing-6);
+        font-size: var(--font-md);
+
+        // Adjust the font size and spacing based on user font size choice.
+        @media screen and (min-width: 30rem) {
+          margin-block-start: var(--spacing-8);
+          font-size: var(--font-lg);
+        }
+      }
+    }
+
+    img {
+      // Set the size of the laptop image.
+      transform: scale(0.7);
+      height: 10rem;
+      margin-block-end: calc(0 - var(--spacing-8));
+
+      // Adjust the layout based on user font size choice.
+      @media screen and (max-height: 32rem) {
+        // On small viewports (landscape), hide the laptop image.
+        display: none;
+      }
+
+      // Adjust the layout based on user font size choice.
+      @media screen and (min-width: 20rem) {
+        // Adjust the size of the laptop image.
+        transform: scale(0.85);
+        margin-block-end: var(--spacing-2);
+      }
+
+      // Adjust the layout based on user font size choice.
+      @media screen and (min-width: 48rem) {
+        // Adjust the size of the laptop image.
+        transform: scale(1);
+        height: 180px;
+        margin-block: var(--spacing-8) var(--spacing-6);
+      }
+    }
+  }
 }

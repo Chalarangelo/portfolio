@@ -1,0 +1,85 @@
+main > section {
+  // Make image size responsive.
+  --section-image-size: 52px;
+
+  @media screen and (max-width: 25rem) {
+    // Adjust image size based on user font size choice.
+    --section-image-size: 48px;
+  }
+
+  section {
+    // Use Flex to create a two-column layout.
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: end;
+    gap: var(--spacing-6);
+
+    img {
+      // Style the image accordingly.
+      width: var(--section-image-size);
+      height: var(--section-image-size);
+      aspect-ratio: 1 / 1;
+      border-radius: var(--border-radius-small);
+    }
+
+    h3 {
+      // Allow headings to span the leftover width.
+      flex-grow: 1;
+      // Apply a better text balancing algorithm, when supported.
+      text-wrap-style: balance;
+
+      a {
+        // Remove underline from header links.
+        --link_color-underline: transparent;
+        // Apply a transition on hover.
+        transition: color var(--animation-duration-medium) ease;
+
+        @media (hover: hover) {
+          &:is(:hover, :focus) {
+            // Only apply hover styles on devices that support hover.
+            color: var(--color-primary);
+          }
+        }
+      }
+
+      small {
+        // Add a small text below the heading.
+        display: block;
+        font-size: var(--font-xs);
+        color: var(--color-text-light);
+        font-weight: var(--font-weight-normal);
+        // Add some spacing between the heading and the small text.
+        margin-block-start: var(--spacing-2);
+        // Reset the text balancing algorithm, as it doesn't work well in this
+        // scenario. Special handling is applied below.
+        text-wrap-style: initial;
+
+        span {
+          // If necessary, wrap the small text to the next line and add some
+          // spacing between the lines, same as the spacing between the heading
+          // and the small text.
+          display: inline-block;
+          margin-block-start: var(--spacing-2);
+        }
+      }
+    }
+
+    h3,
+    p,
+    ul {
+      // Align the text content to the side of the image.
+      flex-basis: calc(100% - var(--section-image-size) - var(--spacing-6));
+    }
+
+    // Adjust content display based on user font size choice.
+    @media screen and (max-width: 30rem) {
+      // If the viewport is too small, add some more spacing.
+      margin-block-end: var(--layout-row-spacing);
+
+      p {
+        // On smaller viewports, make the text full width.
+        flex-basis: 100%;
+      }
+    }
+  }
+}
