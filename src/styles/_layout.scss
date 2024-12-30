@@ -1,0 +1,126 @@
+html {
+  // Layout center column width.
+  --layout-main-column-width: 800px;
+  // Layout bleed width (either side).
+  --layout-bleed-width: 24px;
+
+  // Define a row gap variable that will be inherited throughout the layout.
+  // This allows children to override it, using negative `margin` values, for
+  // example, or use it to create proportional spacing.
+  --layout-row-spacing: var(--spacing-12);
+
+  // Add spacing between header, main area and footer, using a variable, so
+  // that it can be altered as necessary. It's set to be twice the size of the
+  // row gap, to keep it proportional to any changes.
+  --layout-area-spacing: calc(2 * var(--layout-row-spacing));
+
+  // Viewport-based border radius. This variable is inherited and reused in
+  // a few places, so that full-bleed elements can have rounded corners on
+  // larger viewports and square corners on smaller viewports.
+  --layout-border-radius: var(--border-radius-medium);
+
+  // Use the layout row spacing to add padding to the top of the target element,
+  // when the user navigates via a hash link.
+  scroll-padding-top: var(--layout-row-spacing);
+
+  // Note: This is dependent on the user's font size and might look a bit odd
+  // in some configurations, but it's a progressive enhancement and should
+  // not be a problem either way.
+  @media (max-width: 50rem) {
+    // Square corners on smaller viewports.
+    --layout-border-radius: 0;
+    // Reduce the row gap and area gap to make the layout more compact.
+    --layout-row-spacing: var(--spacing-8);
+  }
+}
+
+body {
+  // Set up main layout (left area, center area, right area).
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(auto, var(--layout-main-column-width))
+    minmax(0, 1fr);
+  // Note: Adding new areas (top, bottom rows) will create additional gaps
+  // even if they are empty. Using `:empty` and `display: none` might be
+  // worth trying, but it's not necessarily the best idea (accessibility).
+  // One of these areas (right) might be used for a ToC sidebar.
+  // It's also possible that some cross links will be added to the bottom
+  // or side of the page, but then again, these could go inside the main area.
+  grid-template-areas:
+    'header header header'
+    // 'left top right' -> Add this if it's ever needed
+    'left center right'
+    // 'left bottom right' -> Add this if it's ever needed
+    'footer footer footer';
+
+  // Add spacing between header, main area and footer.
+  row-gap: var(--layout-area-spacing);
+}
+
+main {
+  // Use the correct grid area (spans 1 column).
+  grid-area: center;
+}
+
+main > section {
+  // Set up a grid layout with standard bleed on either side.
+  display: grid;
+  grid-template-columns:
+    var(--layout-bleed-width)
+    1fr
+    var(--layout-bleed-width);
+
+  // Add spacing between children.
+  row-gap: var(--layout-row-spacing);
+
+  // Note: This selector is not too specific, yet it needs to be overriden
+  // intentionally. This doesn't pose a problem overall, but it's worth
+  // keeping in mind for a potential future refactor.
+  > * {
+    // Place the content in the middle column (no bleed).
+    grid-column: 2;
+  }
+
+  + section {
+    margin-block-start: var(--layout-area-spacing);
+  }
+}
+
+// Scrollbar styles are variable-based. If the element doesn't define the
+// correct variables, the scrollbar will default to the defaults.
+// This is useful for component-based scrollbar styling.
+::-webkit-scrollbar {
+  // Make scrollbars float in space.
+  background-color: transparent;
+  width: var(--scrollbar_size, 8px);
+  height: var(--scrollbar_size, 8px);
+}
+
+::-webkit-scrollbar-track {
+  // Add a margin to the scrollbar track, if defined.
+  margin: var(--scrollbar_margin, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  // Color the scrollbar knob.
+  background-color: var(--scrollbar_color-knob, var(--color-scrollbar-knob));
+  // Make the scrollbar knob round.
+  border-radius: var(--scrollbar_size);
+  // Add a border to the scrollbar knob, if defined.
+  border: var(--scrollbar_border, none);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(-scrollbar_color-knob-active, var(--color-scrollbar-knob-active));
+    }
+  }
+}
+
+body {
+  // Reserve symmetrical space for the scrollbar on both sides.
+  scrollbar-gutter: stable both-edges;
+  // Style the scrollbar.
+  --scrollbar_size: 12px;
+  --scrollbar_border: 2px solid var(--color-background);
+}

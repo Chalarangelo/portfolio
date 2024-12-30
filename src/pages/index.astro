@@ -1,0 +1,13 @@
+---
+import '../styles/index.scss';
+import Section from '../components/Section.astro';
+import Intro from '../components/Intro.astro';
+import Layout from '../layouts/Layout.astro';
+
+import { sections } from '../data';
+---
+
+<Layout>
+  <Intro />
+  {sections.map((section) => (<Section section={section} />))}
+</Layout>

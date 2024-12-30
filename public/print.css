@@ -1,0 +1,58 @@
+:root {
+  --color-background: none !important;
+  --color-background-light: hsl(240, 20%, 96%) !important;
+  --color-text: hsla(0, 0%, 0%, 95%) !important;
+  --color-text-light: hsla(0, 0%, 0%, 87%) !important;
+  --color-text-lighter: hsla(0, 0%, 0%, 76%) !important;
+  --color-primary: hsl(217, 98%, 66%) !important;
+  --color-primary-light: hsl(217, 98%, 77%) !important;
+  --color-code-background: hsl(225, 15%, 94%) !important;
+  --color-border: hsl(235, 25%, 63%) !important;
+  --color-border-light: hsl(235, 15%, 82%) !important;
+}
+
+@page {
+  padding: var(--spacing-24) var(--spacing-16) !important;
+
+  @bottom-left {
+    font-size: var(--font-xs);
+    margin-block-start: -48px;
+    margin-inline-start: var(--spacing-16);
+    content: "https://chalarangelo.me";
+  }
+
+  @bottom-right {
+    font-size: var(--font-xs);
+    margin-block-start: -48px;
+    margin-inline-end: var(--spacing-16);
+    content: "Page " counter(page) " of " counter(pages);
+  }
+}
+
+body > header,
+body > footer {
+  display: none !important;
+}
+
+main > section:first-child > div > div > div {
+  display: none !important;
+}
+
+main > section:first-child > div > div {
+  justify-content: center !important;
+}
+
+main > section,
+main > section section {
+  break-inside: avoid !important;
+}
+
+main > section section h3 a {
+  display: none !important;
+}
+
+a:any-link {
+  --link_color-underline: transparent;
+  color: var(--color-text) !important;
+  font-weight: bold !important;
+}

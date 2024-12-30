@@ -1,0 +1,67 @@
+---
+import Icon from './Icon.astro';
+
+const iconSize = 20;
+const socialLinks = [
+  {
+    name: 'mail',
+    href: 'mailto:chalarangelo@gmail.com',
+    title: 'Email',
+  },
+  {
+    name: 'github',
+    href: 'https://github.com/Chalarangelo',
+    title: 'GitHub',
+  },
+  {
+    name: 'linkedin',
+    href: 'https://www.linkedin.com/in/angelos-chalaris-b0933314a/',
+    title: 'LinkedIn',
+  },
+  {
+    name: 'stackoverflow',
+    href: 'https://stackoverflow.com/users/1650200/angelos-chalaris?tab=profile',
+    title: 'Stack Overflow',
+  },
+  {
+    name: 'codepen',
+    href: 'https://codepen.io/chalarangelo',
+    title: 'Codepen',
+  },
+];
+const age = new Date(new Date() - new Date('1993-12-08')).getFullYear() - 1970;
+---
+
+<section>
+  <div>
+    <img src="https://avatars2.githubusercontent.com/u/8281875?v=4" alt="Angelos Chalaris">
+    <div>
+      <h1>Angelos Chalaris
+        <small>
+          <Icon name="mappin" size="18" />
+          Athens, Greece
+        </small>
+      </h1>
+      <div>
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            title={link.title}
+            rel="noopener noreferrer"
+          >
+            <Icon name={link.name} size={iconSize} />
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <p>Hi! <span class="wave">👋</span> I'm Angelos Chalaris, a <strong>Full Stack Software Engineer</strong> from <strong>Athens, Greece</strong>.</p>
+
+  <p>I've been coding since 2011, making it my career path and longest-standing hobby to date. I love programming, system design, and problem-solving, and I'm always looking for new challenges to tackle. My main focus is on <strong>web development</strong>, but I've also worked with various other technologies in the past.</p>
+
+  <p>I have a <strong>BSc in Computer Science</strong> and a <strong>MSc in Advanced Information Systems & Software Development Technologies</strong>. I currently work as a <strong>Senior Full Stack Software Engineer</strong> for <strong>Skroutz</strong>, a leading e-commerce platform in Greece.</p>
+
+  <p><strong>Skills:</strong> HTML, CSS, JavaScript, React, Ruby, Ruby on Rails, MariaDB, Git, Figma</p>
+</section>

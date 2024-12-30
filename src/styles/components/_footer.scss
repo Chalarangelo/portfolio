@@ -1,0 +1,59 @@
+footer {
+  // Use the correct grid area (spans 3 columns).
+  grid-area: footer;
+  display: grid;
+
+  // Add a column on either side to align with the main area's bleed spacing.
+  // These side columns will not shrink below the bleed size, but will expand
+  // as needed on mobile devices, allowing the footer to be centered.
+  // The content column will be either the rest of the space on smaller
+  // viewports or the width of the main area (including bleed) on desktop,
+  // whichever is smaller.
+  grid-template-columns:
+    minmax(var(--layout-bleed-width), 1fr)
+    min(calc(var(--layout-main-column-width)), calc(100% - 2 * var(--layout-bleed-width)))
+    minmax(var(--layout-bleed-width), 1fr);
+
+  // Add some space above and beyond.
+  padding-block: var(--spacing-8) var(--spacing-20);
+
+  // This `div` element is a necessary wrapper to allow for a flex layout
+  // to be applied to the footer's content.
+  div {
+    // Allow wrapping, align correctly and add some spacing between items.
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--spacing-16) var(--spacing-24);
+  }
+
+  p {
+    // Place the content in the content column (skip left spacing column).
+    grid-column: 2;
+    // Use a better wrapping algorithm, if available.
+    text-wrap: pretty;
+    font-size: var(--font-xs);
+    color: var(--color-text-lighter);
+    text-align: center;
+
+    // Add some space above and a very thin border to separate the footer.
+    padding-block-start: var(--spacing-12);
+    border-block-start: var(--border-width-hairline) solid var(--color-border);
+  }
+
+  a {
+    // Remove underline from links.
+    --link_color-underline: transparent;
+
+    // Apply a transition on hover.
+    transition: color var(--animation-duration-medium) ease;
+
+    @media (hover: hover) {
+      // Only apply hover styles on devices that support hover.
+      &:is(:hover, :focus) {
+        color: var(--color-text);
+      }
+    }
+  }
+}

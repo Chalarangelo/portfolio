@@ -1,0 +1,28 @@
+---
+import Icon from './Icon.astro';
+
+const { section } = Astro.props;
+---
+
+<section>
+  <h2>{section.title}</h2>
+  {section.items.map((item) => (
+    <section>
+      <img src={`/assets/${item.asset}`} alt={item.title} />
+      <h3>
+        {item.title}
+        {item.link && (
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
+            <Icon name="link" size="16" />
+          </a>
+        )}
+        <small set:html={`${item.subtitle}${item.detail ? (` &middot; <span>${item.detail}</span></small>`) : ''}`} />
+      </h3>
+      {Array.isArray(item.content) ? item.content.map((p) => (
+        <p set:html={p} />
+      )) : item.content && (
+        <p set:html={item.content} />
+      )}
+    </section>
+  ))}
+</section>
