@@ -1,43 +1,28 @@
 ---
+import Icon from './Icon.astro';
+
 const { section } = Astro.props;
 ---
 
-<section
-  class="col-centered container"
-  id={section.id}
->
-  <div class="col-full">
-    <slot>
-      <h2>{section.title}</h2>
-      {section.items.map((item) => (
-        <div class="flex-container">
-          <div class="flex-media-logo">
-            <img src={`/assets/${item.asset}`} alt={item.title} />
-          </div>
-          <div class="flex-title">
-            <h3>
-              {item.title}
-              {item.link && (
-                <a href={item.link} target="_blank">
-                  <img src="/assets/link-external.svg" alt={item.title}/>
-                </a>
-              )}
-              <small>{item.subtitle}</small>
-              {item.detail && <small>{item.detail}</small>}
-            </h3>
-          </div>
-        </div>
-        <div class="content-left-offset">
-          <p set:html={item.content.intro} />
-          {item.content.points && item.content.points.length && (
-            <ul>
-              {item.content.points.map((point) => (
-                <li set:html={point} />
-              ))}
-            </ul>
-          )}
-        </div>
-      ))}
-    </slot>
-  </div>
+<section>
+  <h2>{section.title}</h2>
+  {section.items.map((item) => (
+    <section>
+      <img src={`/assets/${item.asset}`} alt={item.title} />
+      <h3>
+        {item.title}
+        {item.link && (
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
+            <Icon name="link" size="16" />
+          </a>
+        )}
+        <small set:html={`${item.subtitle}${item.detail ? (` &middot; <span>${item.detail}</span></small>`) : ''}`} />
+      </h3>
+      {Array.isArray(item.content) ? item.content.map((p) => (
+        <p set:html={p} />
+      )) : item.content && (
+        <p set:html={item.content} />
+      )}
+    </section>
+  ))}
 </section>

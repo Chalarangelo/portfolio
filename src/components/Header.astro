@@ -1,24 +1,10 @@
----
-const { sections } = Astro.props;
----
-
 <header>
-  <div class="backdrop" />
-<div class="backdrop filtered" />
-<div class="title">
-  <img class="laptop" src="laptop.svg" alt=""/>
-  <div class="separator" />
-  <h1>Chalarangelo
-    <small>Web developer</small>
-  </h1>
-</div>
+  <img src="/splash.jpg" alt="" />
+  <div />
+  <div>
+    <img src="laptop.svg" alt=""/>
+    <h1>Chalarangelo
+      <small>Full Stack Engineer</small>
+    </h1>
+  </div>
 </header>
-<nav>
-  <ul>
-    {sections.map(([id, title]) => (
-      <li>
-        <a href={`#${id}`}>{title}</a>
-      </li>
-    ))}
-  </ul>
-</nav>

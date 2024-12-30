@@ -1,3 +1,8 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,9 +10,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="theme-color" content="#333333">
 
-    <link rel="icon" type="image/png" href="./favicon.png" />
-    <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
-    <link rel="apple-touch-icon" href="./logo-192.png">
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+    <link rel="apple-touch-icon" href="/logo-192.png">
 		<meta name="generator" content={Astro.generator} />
     <title>Angelos Chalaris - Web Developer</title>
     <meta name="description" content="Angelos Chalaris (chalarangelo) is a web developer from Greece.">
@@ -16,17 +21,15 @@
     <meta property="og:type" content="website">
     <meta property="og:description" content="Angelos Chalaris (chalarangelo) is a web developer from Greece.">
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/8281875?v=4">
+    <link rel='stylesheet' href='/print.css' media='print' />
 	</head>
 	<body>
-		<slot />
+    <Header/>
+    <main>
+		  <slot />
+    </main>
+    <Footer />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!-- TODO: Wave emoji! -->

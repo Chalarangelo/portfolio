@@ -1,0 +1,65 @@
+---
+const { name, size = 16, ...rest } = Astro.props;
+
+const svgProps = {
+  width: size,
+  height: size,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  'stroke-width': 2,
+  'stroke-line-join': 'round',
+  stroke: 'currentColor',
+  ...rest,
+  // This needs to be last to override any `class` passed in
+  class: `icon ${rest.class || ''}`.trim(),
+};
+---
+
+{ ({
+  'link': () => (
+    <svg {...svgProps}>
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+      <polyline points="15 3 21 3 21 9"></polyline>
+      <line x1="10" y1="14" x2="21" y2="3"></line>
+    </svg>
+  ),
+  'mappin': () => (
+    <svg {...svgProps}>
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+      <circle cx="12" cy="10" r="3"></circle>
+    </svg>
+  ),
+  'mail': () => (
+    <svg {...svgProps}>
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+      <polyline points="22,6 12,13 2,6"></polyline>
+    </svg>
+  ),
+  'github': () => (
+    <svg {...svgProps}>
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+    </svg>
+  ),
+  'linkedin': () => (
+    <svg {...svgProps}>
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+      <rect x="2" y="9" width="4" height="12"></rect>
+      <circle cx="4" cy="4" r="2"></circle>
+    </svg>
+  ),
+  'stackoverflow': () => (
+    <svg viewBox="0 0 511.627 511.627" fill="currentColor" {...svgProps}>
+      <path d="M324.907 344.893l-200.994-18.559-3.997 42.828 201.281 18.555zM320.055 399.996l-201.853.287v43.106l201.853-.278zM363.734 239.255L189.865 136.471l-21.982 37.115L341.751 276.37zM338.329 288.361l-195.002-52.249-11.136 41.686 195.002 52.249z" />
+      <path d="M354.594 477.651H89.649V301.212H55.104V511.34h.287l9.995.287h323.187v-.287l.287-9.993V301.212h-34.266zM421.98 0l-42.544 7.423 34.553 198.998 42.534-7.422zM256.958 66.522L370.873 233.26l35.409-24.267L292.643 41.971z" />
+    </svg>
+  ),
+  'codepen': () => (
+    <svg {...svgProps}>
+      <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+      <line x1="12" y1="22" x2="12" y2="15.5"></line>
+      <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+      <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+      <line x1="12" y1="2" x2="12" y2="8.5"></line>
+    </svg>
+  ),
+}[name] || (() => ''))() }
