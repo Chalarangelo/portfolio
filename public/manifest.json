@@ -1,8 +1,8 @@
 {
-	"background_color": "#ffffff",
-	"theme_color": "#333333",
-	"name": "TODO",
-	"short_name": "TODO",
+	"background_color": "#07071c",
+	"theme_color": "#07071c",
+	"name": "Angelos Chalaris",
+	"short_name": "Chalarangelo",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [
